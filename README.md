@@ -19,22 +19,20 @@ List of the objects or "classes" that were used to train the model to identify:
    
 2.  **Challenges & Observations:**
 
-    As I assumed when picking my object, the calculator was the most proficient classification. It is the only large object in my listing, so I believe that is why it is easily distinguished. Shockingly, the model has a little confusion between gluestick and hair comb. I see 0 similarities between the two, so I am uncertain as to how to boost the confidence. As stated in the previous section, pen was initially the heaviest struggle in confidence level. After giving better images, the pen class was much more identifiable. While testing untrained objects after the final iteration, I showed the model a yellow pen with the intention of confusing the model, and it was actually not very tricked. The confidence levels were 76% pen, 16% pencil, and 8% glue stick.
+    As I assumed when picking my object, the calculator was the most proficient classification. It is the only large object in my listing, so I believe that is why it is easily distinguished. Shockingly, the model has a little confusion between gluestick and hair comb. I see 0 similarities between the two, so I am uncertain as to how to boost the confidence. As stated in the previous section, pen was initially the heaviest struggle in confidence level. After giving better images, the pen class was much more identifiable. While testing untrained objects after the final iteration, I showed the model a yellow pen with the intention of confusing the model, and it was somewhat tricked. The confidence levels were 56% pen, 36% pencil, and 8% glue stick.
 
 3.  **Bias in AI:**
-    * If you only trained your "mug" class with images of *your specific mug* (and didn't vary color, shape, etc.), how well do you think it would recognize other students' significantly different mugs? How does this illustrate the concept of bias being introduced through training data?
-    * Imagine all your training images were taken in very bright, direct lighting. What might happen if you tried to use the model in a dimly lit room or with strong shadows? How does this relate to the robustness and potential biases of AI models?
-
+   
+      Bias directly affects how an image recognition model makes it's interpretations. For example, if I were to show my model a different brand of gluestick that has a different shape, color, and size, would it still guess correctly? Probably not, but that's because it's not trained for an gluestick that is different. Same goes for the atmosphere around the object in question. All the pictures for my model were taken in a bright environment, so if the lights were turned off, then the confidence may suffer. When I tested this very question, it did exactly as previously hypothesizied. I showed the model a gluestick with the lights off, and the confidence was 44% hair comb, 35% gluestick, 14% pencil, 4% calculator, and 3% pen.
 
 4.  **Model Limitations & Usefulness:**
-    * What are some key limitations of the model you created?
-    * Why is it useful to be able to download your trained model files (like `model.json`, `weights.bin`) and share them (e.g., via GitHub)? What does this enable?
 
+      This model's biggest limitation is the lack of variety in each classifcation. The model only trained on: orange elmer gluesticks, tiny black combs, traditional yellow pencil, a normal black pen, and a graphing calcuator. Using a different brand or style could easily confuse the model (as tested with the yellow pencil example in *Challenges & Observations*). That's why linking the model files and sharing it on GitHub like this is helpful to the models evolution. Any GitHub user can download this model and reproduce a more efficient version that has more variety and even more classifications. 
 
 5.  **Real-World Applications & Ethics:**
     * Brainstorm 2-3 real-world applications where a similar image classification model could be useful.
     * Briefly discuss one ethical consideration that developers should keep in mind when building and deploying image recognition AI in the real world (e.g., related to fairness, privacy, misuse).
-
+      An image recognition model similar to this one have proven extremely useful in many scenarios. Firstly, healthcare deparments use one to identify and diagnose fractures or tumors using data from previous patients. Fully autonomous cars also use image recognition so that they do not run a stop sign or hit a pedestrian. Even our phones use image recognition when we try to unlock it with face identification. However, their are certain ethical issues for a developer to consider when creating one these models. For example, an image recognition model can be weaponized to create deepfakes or misinformation. There's even been reports of facial recognition errors due to underrepresented factors such as age or skin color. It's important that when developing an image recognition AI that is intended for use that factors like the previously mentioned are considered. 
 
 ## Screenshots
 * Pen: <img width="1919" height="1079" alt="Screenshot 2025-11-19 150553" src="https://github.com/user-attachments/assets/4f8fbd88-d02f-4b5d-be1b-f192b1e4a742" />
